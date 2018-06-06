@@ -1,3 +1,13 @@
+ramsang:
+  username: ramsang
+  name: RamSang
+  url_full: http://ramsang0212.github.io
+  url: ramsang0212.github.io
+  bio: A man to become a famous web developer
+  picture: assets/images/ramp.jpg
+  facebook: 
+  twitter: 
+  cover: True
 ghost:
   username: ghost
   name: Ghost

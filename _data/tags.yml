@@ -14,3 +14,7 @@ getting-started:
   name: getting-started
   description: False
   cover: False
+angular:
+  name: angular
+  description: Angular Study
+  cover: assets/images/fables.jpg
