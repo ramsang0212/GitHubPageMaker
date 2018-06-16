@@ -1,0 +1,122 @@
+---
+layout: post
+current: post
+cover:  assets/images/angular.jpg
+navigation: True
+title: Angular Study Chapter 02 - Angular 파일구조 및 화면에 Hello World 찍어보기
+date: 2018-06-16 08:00:00
+tags: [Angular]
+class: post-template
+subclass: 'post tag-angular'
+author: ramsang
+---
+
+<p>
+    <h2 style="color: plum" id="basictagging">Angular 강좌 목록</h2>
+    <ul class="table-of-contents-list">
+            <li><a href="./angular-study-01">Angular Study Chapter 01 - CLI로 빠르게 시작하기</a></li>
+            <li><a href="./angular-study-02">Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기</a></li>
+    </ul>
+</p>
+
+<p><h2 id="basictagging">Angular 파일구조 및 화면에 Hello World 찍어보기</h2></p>
+<p>이번 장에서는 CLI를 이용해 만든 Angular 파일 구조를 살펴보면서 화면에 Hello World가 나오도록 수정해보겠습니다.</p>
+<p>Angular CLI를 사용하여 프로젝트를 생성하면 아래와 같은 파일 구조의 스캐폴딩이 생성됩니다.</p>      
+<pre>
+        {% raw %}
+        │  .editorconfig
+        │  .gitignore
+        │  angular.json
+        │  package-lock.json
+        │  package.json
+        │  README.md
+        │  tsconfig.json
+        │  tslint.json
+        │  
+        ├─e2e
+        │  │  protractor.conf.js
+        │  │  tsconfig.e2e.json
+        │  │  
+        │  └─src
+        │          app.e2e-spec.ts
+        │          app.po.ts
+        │          
+        ├─node_modules
+        │  
+        │                  
+        └─src
+            │  browserslist
+            │  favicon.ico
+            │  index.html
+            │  karma.conf.js
+            │  main.ts
+            │  polyfills.ts
+            │  styles.css
+            │  test.ts
+            │  tsconfig.app.json
+            │  tsconfig.spec.json
+            │  tslint.json
+            │  
+            ├─app
+            │      app.component.css
+            │      app.component.html
+            │      app.component.spec.ts
+            │      app.component.ts
+            │      app.module.ts
+            │      
+            ├─assets
+            │      
+            └─environments
+                    environment.prod.ts
+                    environment.ts
+        {% endraw %}
+</pre>
+<hr />
+
+<ol>
+    <li>
+        <h2> src 폴더 </h2>
+        <br><p>Angular 프로젝트는 컴포넌트, 디렉티브, 서비스, 모듈 등 Angular 구성요소와 각종 설정 파일로 구성된다.
+                src 폴더는 Angular의 모든 구성요소, 공통 CSS, 이미지나 폰트와 같은 정적 파일, 설정 파일 등 애플리케이션 필수 파일을 담고 있다.</p>
+    </li>
+    <ul>
+        <li></li>
+    </ul>
+
+    
+    폴리필 라이브러리 임포트
+
+    폴리필? 구버전의 브라우저가 최신 스크립트 기능에 대응하도록 보완하는 라이브러리
+    
+    core-js : ES6 지원을 위한 폴리필
+    zonde.js : 변화 감지를 위한 라이브러리
+    reflect-metadata : ES7 장식자 추가를 위한 폴리필
+
+
+    <li>List Item 2 <br />
+    <ol><li>Nested list item A</li>
+    <li>Nested list item B</li></ol></li>
+    <li>List Item 3</li>
+</ol>
+        
+<h2>Angular CLI 시작하기 첫 번째</h2>
+<p><a href="https://nodejs.org/en/" target="_blank">nodejs homepage</a>로 이동해서 node 설치하기</p>
+<p><img src="../assets/images/node_home_page.png"/></p>
+
+<hr />
+
+<h2>Angular CLI 시작하기 두 번째</h2>
+<p>명령 프롬프트 열고 <code>npm install -g @angular/cli</code> 명령어 입력하기<br><mark>cf) 윈도우키를 누르고 cmd를 입력하면 간편하게 열 수 있습니다.</mark></p>
+<p><img src="../assets/images/npm_install_angular_cli.png"/></p>
+
+
+<h2>Good Bye Chapter 02</h2>
+<p>Next Chapter....</p>
+<blockquote>
+    <strong>Chapter 03</strong>
+    <ul>
+        <li>CLI로 만들어진 Angular 프로젝트 구조보기</li>
+        <li>간단하게 화면에 Hello World 찍어보기</li>
+    </ul>
+</blockquote>
+
