@@ -3,7 +3,7 @@ layout: post
 current: post
 cover:  assets/images/tags.jpg
 navigation: True
-title: Angular Study Chapter01 - 소개 
+title: Angular Study Chapter01 - CLI로 빠르게 시작하기 
 date: 2018-06-06 08:00:00
 tags: [Angular]
 class: post-template
@@ -11,78 +11,57 @@ subclass: 'post tag-angular'
 author: ramsang
 ---
 
-<figure class="highlight"><pre><code class="language-css" data-lang="css"><span class="c">/* css code sample */</span>
-    <span class="nf">#container</span> <span class="p">{</span>
-        <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-        <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
-        <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-    <span class="p">}</span></code></pre></figure>
-<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-        2
-        3
-        4
-        5
-        6
-        7
-        8
-        9
-        10
-        11
-        12
-        13
-        </pre></td><td class="code"><pre><span class="c1">// javascript code sample</span>
-        <span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-            <span class="na">type</span><span class="p">:</span> <span class="s1">'POST'</span><span class="p">,</span>
-            <span class="na">url</span><span class="p">:</span> <span class="s1">'backend.php'</span><span class="p">,</span>
-            <span class="na">data</span><span class="p">:</span> <span class="s2">"q="</span><span class="o">+</span><span class="nx">myform</span><span class="p">.</span><span class="nx">serialize</span><span class="p">(),</span>
-            <span class="na">success</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
-            <span class="c1">// on success use return data here</span>
-            <span class="p">},</span>
-            <span class="na">error</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">xhr</span><span class="p">,</span> <span class="nx">type</span><span class="p">,</span> <span class="nx">exception</span><span class="p">)</span> <span class="p">{</span>
-            <span class="c1">// if ajax fails display error alert</span>
-            <span class="nx">alert</span><span class="p">(</span><span class="s2">"ajax error response type "</span><span class="o">+</span><span class="nx">type</span><span class="p">);</span>
-            <span class="p">}</span>
-        <span class="p">});</span></pre></td></tr></tbody></table></code></pre></figure>
-    
-<p>Ghost has a single, powerful organisational taxonomy, called tags.</p>
-<p>It doesn't matter whether you want to call them categories, tags, boxes, or anything else. You can think of Ghost tags a lot like Gmail labels. By tagging posts with one or more keyword, you can organise articles into buckets of related content.</p>
-<h2 id="basictagging">Basic tagging</h2>
-<p>When you write a post, you can assign tags to help differentiate between categories of content. For example, you might tag some posts with <code>News</code> and other posts with <code>Cycling</code>, which would create two distinct categories of content listed on <code>/tag/news/</code> and <code>/tag/cycling/</code>, respectively.</p>
-<p>If you tag a post with both <code>News</code> <em>and</em> <code>Cycling</code> - then it appears in both sections.</p>
-<p>Tag archives are like dedicated home-pages for each category of content that you have. They have their own pages, their own RSS feeds, and can support their own cover images and meta data.</p>
-<h2 id="theprimarytag">The primary tag</h2>
-<p>Inside the Ghost editor, you can drag and drop tags into a specific order. The first tag in the list is always given the most importance, and some themes will only display the primary tag (the first tag in the list) by default. So you can add the most important tag which you want to show up in your theme, but also add a bunch of related tags which are less important.</p>
-<p><mark><strong>News</strong>, Cycling, Bart Stevens, Extreme Sports</mark></p>
-<p>In this example, <strong>News</strong> is the primary tag which will be displayed by the theme, but the post will also still receive all the other tags, and show up in their respective archives.</p>
-<h2 id="privatetags">Private tags</h2>
-<p>Sometimes you may want to assign a post a specific tag, but you don't necessarily want that tag appearing in the theme or creating an archive page. In Ghost, hashtags are private and can be used for special styling.</p>
-<p>For example, if you sometimes publish posts with video content - you might want your theme to adapt and get rid of the sidebar for these posts, to give more space for an embedded video to fill the screen. In this case, you could use private tags to tell your theme what to do.</p>
-<p><mark><strong>News</strong>, Cycling, #video</mark></p>
-<p>Here, the theme would assign the post publicly displayed tags of <code>News</code>, and <code>Cycling</code> - but it would also keep a private record of the post being tagged with <code>#video</code>.</p>
-<p>In your theme, you could then look for private tags conditionally and give them special formatting:</p>
-{% raw %}
-<div class="language-javascript highlighter-rouge">
-    <div class="highlight">
-        <div class="highlight">
-                <code class="hljs javascript">
-                    function syntaxHighlight(code) {
-                        var foo = 'Hello World';
-                        var bar = 100;
-                    }
-                </code>
-        </div>
-    </div>
-</div>
-<code class="hljs javascript"><span class="kd"><span class="hljs-function"><span class="hljs-keyword">function</span></span></span><span class="hljs-function"> </span><span class="nx"><span class="hljs-function"><span class="hljs-title">syntaxHighlight</span></span></span><span class="p"><span class="hljs-function">(</span></span><span class="nx"><span class="hljs-function"><span class="hljs-params">code</span></span></span><span class="p"><span class="hljs-function">)</span></span><span class="hljs-function"> </span><span class="p">{</span>
-    <span class="kd"><span class="hljs-keyword">var</span></span> <span class="nx">foo</span> <span class="o">=</span> <span class="s1"><span class="hljs-string">'Hello World'</span></span><span class="p">;</span>
-    <span class="kd"><span class="hljs-keyword">var</span></span> <span class="nx">bar</span> <span class="o">=</span> <span class="mi"><span class="hljs-number">100</span></span><span class="p">;</span>
- <span class="p">}</span>
- </code>
-<pre><code class="highlight">
-        function syntaxHighlight(code) {
-            var foo = 'Hello World';
-            var bar = 100;
-         }
-</code></pre>
-<p>You can find documentation for theme development techniques like this and many more over on Ghost's extensive <a href="https://themes.ghost.org/">theme documentation</a>.</p>
-{% endraw %}
+<p>
+    <h2 style="color: plum" id="basictagging">Angular 강좌 목록</h2>
+    <ul class="table-of-contents-list">
+        <li><a href="./angular-study-01">Angular Study Chapter01 - CLI로 빠르게 시작하기</a></li>
+    </ul>
+</p>
+
+<p><h2 id="basictagging">Angular CLI를 이용해 빠르게 시작하기</h2></p>
+<p>이번 챕터에서는 CLI를 이용해 Angular를 실행시켜보기 위해서 필요한 설치와 명령어를 통해 실행시켜보도록 하겠습니다.</p>
+<blockquote>
+    <p><strong>AngularJS? Angular?</strong></p>
+    <p> AngularJS => 1.x Version </p>
+    <p> Angular => After 2.x Version  </p>    
+</blockquote>
+<hr />
+
+<h2>Angular CLI 시작하기 첫 번째</h2>
+<p><a href="https://nodejs.org/en/" target="_blank">nodejs homepage</a>로 이동해서 node 설치하기</p>
+<p><img src="../assets/images/node_home_page.png"/></p>
+
+<hr />
+
+<h2>Angular CLI 시작하기 두 번째</h2>
+<p>명령 프롬프트 열고 <code>npm install -g @angular/cli</code> 명령어 입력하기<br><mark>cf) 윈도우키를 누르고 cmd를 입력하면 간편하게 열 수 있습니다.</mark></p>
+<p><img src="../assets/images/npm_install_angular_cli.png"/></p>
+
+<hr />
+
+<h2>Angular CLI 시작하기 세 번째</h2>
+<p>열어둔 프롬프트에 <code>ng new [projectName]</code> 명령어 입력하기<br><mark>Angular project가 만들어진 걸 확인할 수 있습니다.</mark></p>
+<p><img src="../assets/images/ng_new.png"/></p>
+
+<hr />
+
+<h2>Angular CLI 시작하기 네 번째</h2>
+<p>
+    열어둔 프롬프트에서 <code>cd [foldername]</code>명령어를 통해 프로젝트폴더로 이동하고 <code>ng serve</code> 명령어 입력하기
+    <br><mark>명령 프롬프트에서 빨간색 네모안에 주소를 입력하면 처음 시작된 Angular 프로젝트를 확인할 수 있다.</mark>
+</p>
+
+<p><img src="../assets/images/ng_serve.png"/></p>
+<p><img src="../assets/images/ng_serve_first_page.png"/></p>
+
+
+<h2>이상으로 Chapter01을 마치겠습니다.</h2>
+<p>Next Chapter....</p>
+<blockquote>
+    <strong>Chapter02</strong>
+    <ul>
+        <li>CLI로 만들어진 Angular 프로젝트 구조보기</li>
+        <li>간단하게 화면에 Hello World 찍어보기</li>
+    </ul>
+</blockquote>
+
