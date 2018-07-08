@@ -1,0 +1,143 @@
+---
+layout: post
+current: post
+cover:  assets/images/angular.jpg
+navigation: True
+title: Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기
+date: 2018-06-22 08:00:00
+tags: [Angular]
+class: post-template
+subclass: 'post tag-angular'
+author: ramsang
+---
+
+<p>
+    <h2 style="color: plum" id="basictagging">Angular 강좌 목록</h2>
+    <ul class="table-of-contents-list">
+            <li><a href="./angular-study-01">Angular Study Chapter 01 - CLI로 빠르게 시작하기</a></li>
+            <li><a href="./angular-study-02">Angular Study Chapter 02 - Angular 파일구조 및 Hello World 보기</a></li>
+            <li><a href="./angular-study-03">Angular Study Chapter 03 - Angular 애플리케이션의 구성 요소 알아보기</a></li>
+        </ul>
+</p>
+
+<p><h2 id="basictagging">Angular 애플리케이션의 구성 요소 알아보기</h2></p>
+<p>이번 장에서는 Angular 애플리케이션을 구성하는 요소인 모듈, 컴포넌트, 디렉티브, 데이터 바인딩 기초를 간단하게 살펴보면서 코드를 분석해보겠습니다.</p>
+
+<ol>
+    <h2><li>
+        모듈(Module)     
+    </li></h2>
+    <p>
+        모듈은 관련된 구성요소(컴포넌트나 서비스, 디렉티브 등)를 편하게 사용하기 위해 하나로 모은 것이다.
+        <br>작은 애플리케이션에서는 모든 엘리먼트가 하나의 모듈(루트 모듈)에 속할 수도 있고, 더 큰 앱에서는 여러 개의 모듈이 있을 수도 있다.
+        <br>루트 모듈은 앱을 실행하는 데 필요하기 때문에 모든 앱에 반드시 존재하며 애플리케이션의 시작점이 된다.
+        <br>문법을 보면, 모듈은 클래스에 <code>@NgModule</code> 어노테이션을 붙여서 지정하고, 이 어노테이션 안에서 모듈 내용을 설정한다.
+        <br><br>모듈 선언은 아래와 같다.
+    </p>
+{% highlight TypeScript %}
+@NgModule({
+    declarations: [AppComponent],
+    imports: [BrowserModule],
+    providers: [],
+    bootstrap: [AppComponent]
+  })
+  export class AppModule { }
+{% endhighlight %}    
+    <blockquote>
+            <ul>
+                <li>
+                    <p>
+                        <code>declarations: [AppComponent]</code> - AppModule(루트 모듈)에 AppComponent를 선언하면 애플리케이션 전역에서 AppComponent를 사용할 수 있다.
+                    </p>
+                </li>
+                <li>
+                    <p><code>imports: [BrowserModule]</code> - BrowserModule은 브라우저 환경에서 동작하는 애플리케이션을 위한 필수 기능을 제공하는 모듈로서 브라우저에서 동작하는 웹 애플리케이션의 경우, 반드시 BrowserModule을 임포트하여야 한다. BrowserModule은 NgIf 및 NgFor와 같은 빌트인 디렉티브와 빌트인 파이프를 제공하는 CommonModule을 내부에서 import한다. 따라서 BrowserModule을 import하면 별도의 추가적인 import없이 CommonModule을 사용할 수 있게 되어 모든 애플리케이션의 컴포넌트 템플릿에서 빌트인 디렉티브와 빌트인 파이프를 사용할 수 있다.</p>                    
+                </li>
+                <li>
+                    <p>
+                        <code>bootstrap: [AppComponent]</code> - 애플리케이션을 실행하면 @NgModule 어노테이션의 bootstrap으로 지정된 AppComponent가 루트 컴포넌트로 렌더링된다.
+                    </p>
+                </li>
+            </ul>    
+    </blockquote>    
+    <p>
+        루트 애플리케이션을 실행하려면 bootstrapModule 모듈을 실행해야한다.
+        <br><code>main.ts에 보면 platformBrowserDynamic().bootstrapModule(AppModule)</code>
+        <br>작성한 앱 모듈은 바로 로드할 수도 있고, 라우터를 사용하는 경우에는 지연 로딩을 할 수도 있다. 
+        <br>Angular 모듈에 대해 더 자세히 알고 싶다면 <a href="https://angular.io/docs/ts/latest/guide/ngmodule.html" target="_blank">Angular 가이드 문서</a>를 참고하자.
+    </p>
+    <br>
+    <h2>@NgModule 어노테이션의 메타데이터</h2>
+{% highlight TypeScript %}
+@NgModule({
+    providers?: Provider[]
+    declarations?: Array<Type<any>|any[]>
+    imports?: Array<Type<any>|ModuleWithProviders|any[]>
+    exports?: Array<Type<any>|any[]>
+    entryComponents?: Array<Type<any>|any[]>
+    bootstrap?: Array<Type<any>|any[]>
+    schemas?: Array<SchemaMetadata|any[]>
+    id?: string
+  })
+{% endhighlight %}    
+    
+    <table>
+        <tbody>
+            <tr>
+                <th>프로퍼티</th>
+                <th>내용</th>                    
+            </tr>
+            <tr>
+                <td>providers</td>
+                <td>주입 가능한 객체(injectable object) 즉 서비스의 리스트를 선언한다. 루트 모듈에 선언된 서비스는 애플리케이션 전역에서 사용할 수 있다.</td>
+            </tr>                
+                <td>declarations</td>
+                <td>컴포넌트, 디렉티브, 파이프의 리스트를 선언한다. 모듈에 선언된 구성 요소는 모듈에서 사용할 수 있다.</td>
+            </tr>
+            <tr>
+                <td>imports</td>
+                <td>의존 관계에 있는 Angular 라이브러리 모듈, 기능 모듈(Feature module)이라 불리는 하위 모듈, 라우팅 모듈, 서드 파티 모듈을 선언한다.</td>
+            </tr>
+            <tr>
+                <td>bootstrap</td>
+                <td>루트 모듈에서 사용하는 프로퍼티로서 애플리케이션의 진입점(entry point)인 루트 컴포넌트를 선언한다.</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2><li>
+        컴포넌트(Component)     
+    </li></h2>
+    <p>
+        
+    </p>
+    <h2><li>
+        디렉티브(Directive)     
+    </li></h2>
+    <p>
+        
+    </p>
+    <h2><li>
+        데이터 바인딩 기초     
+    </li></h2>
+    <p>
+        
+    </p>    
+</ol>
+
+
+
+<h2>Good Bye Chapter 03</h2>
+<p>Next Chapter....</p>
+<blockquote>
+    <strong>Chapter 04</strong>
+    <ul>
+        <li>Angular 라우터 알아보기</li>
+        <ul>
+            <li>라우터로 데이터 전달</li>
+            <li>자식 라우팅</li>
+            <li>라우팅 가드</li>
+            <li>여러개 라우팅 영역 다루기</li>
+        </ul>
+    </ul>
+</blockquote>
+

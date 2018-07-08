@@ -10,11 +10,12 @@ fables:
   name: fables
   description: A series of short stories that make you think.
   cover: assets/images/fables.jpg
-getting-started:
-  name: getting-started
-  description: False
-  cover: False
 angular:
   name: angular
   description: Angular Study
-  cover: assets/images/fables.jpg
+  cover: assets/images/angular.jpg
+
+# getting-started:
+#   name: getting-started
+#   description: False
+#   cover: False
