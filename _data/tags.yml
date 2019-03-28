@@ -14,6 +14,10 @@ angular:
   name: angular
   description: Angular Study
   cover: assets/images/angular.jpg
+mobile:
+  name: mobile
+  description: Mobile Study
+  cover: assets/images/angular.jpg
 
 # getting-started:
 #   name: getting-started

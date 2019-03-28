@@ -8,10 +8,12 @@ class: page-template
 subclass: 'post page'
 ---
 
-Ghost is professional publishing platform designed for modern journalism. This is a demo site of a basic Ghost install to give you a general sense of what a new Ghost site looks like when set up for the first time.
+<p>내가 공부하고 느낀 것을 메모장으로 남기기엔 다시 찾아보기 힘듦을 느껴 블로그에 남겨보자고 시작한 기록.</p>
 
-> If you'd like to set up a site like this for yourself, head over to [Ghost.org](https://ghost.org/) and start a free 14 day trial to give Ghost a try!
+<blockquote>
+  <p>92년생 취미이자 특기가 모두 개발이고 싶은 꿈 많은 꼬마</p>
+  <p>Android, IOS, React-Native 학습을 통해 모바일 개발을 하면서 서버 단도 해보고 싶은 욕심쟁이</p>
+  <p>구체적인 길은 찾지 못한 길 잃은 어린 양</p>
+</blockquote>
 
-If you're a developer: Ghost is a completely open source (MIT) Node.js application built on a JSON API with an Ember.js admin client. It works with MySQL and SQLite, and is publicly available [on Github](https://github.com/TryGhost/ghost).
-
-If you need help with using Ghost, you'll find a ton of useful articles on [our knowledgebase](https://help.ghost.org/), as well as extensive [developer documentation](https://docs.ghost.org/).
+<p>모두 행복했으면 좋겠습니다. <br>이상 아직은 노는 걸 더 좋아하는 배짱이 개발자 한상덕이였습니다.</p>
